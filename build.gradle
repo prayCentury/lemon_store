@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.pray.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.1'
+	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile 'io.springfox:springfox-swagger-ui:2.6.1'
+	compile 'io.springfox:springfox-swagger2:2.6.1'
+	compile 'com.github.xiaoymin:swagger-bootstrap-ui:1.8.1'
+	compile 'com.alibaba:fastjson:1.2.47'
+
+	compile 'com.baomidou:mybatis-plus-boot-starter:3.1.0'
+	compile group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.1.0'
+	compile group: 'org.apache.velocity', name: 'velocity-engine-core', version: '2.0'
+
+	compileOnly("org.projectlombok:lombok:1.16.22")
+
+
+}
