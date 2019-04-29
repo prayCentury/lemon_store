@@ -33,10 +33,10 @@ public class BaseController<T> {
 
     @PostMapping(value = "/getOne")
     @ApiOperation(value = "查询单条", notes = "查询单条")
-    public T getOne(@ApiParam(value = "记录id") @RequestParam Integer id) {
-        log.debug("1111");
+    public R getOne(@ApiParam(value = "记录id") @RequestParam Integer id) {
         T byId = service.getById(id);
-        return byId;
+        R<T> ok = R.ok(byId);
+        return ok;
     }
 
     @PostMapping(value = "/productList", consumes = "application/json", produces = "application/json")

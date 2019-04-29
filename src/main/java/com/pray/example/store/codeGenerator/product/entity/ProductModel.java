@@ -51,6 +51,9 @@ public class ProductModel extends BaseEntity {
     @ApiModelProperty(value = "是否新上0否/1是")
     @TableField("isNew")
     private Integer isNew;
+    @ApiModelProperty(value = "是否新上0否/1是")
+    @TableField("picUrl")
+    private String picUrl;
 
     public String getBookDate() {
         return DateFormatterUtil(bookDate);

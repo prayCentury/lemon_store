@@ -3,15 +3,16 @@ package com.pray.example.store.codeGenerator.product.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.api.R;
 import com.pray.example.store.codeGenerator.base.controller.BaseController;
+import com.pray.example.store.codeGenerator.base.utils.UploadFileUtil;
 import com.pray.example.store.codeGenerator.product.entity.ProductModel;
 import com.pray.example.store.codeGenerator.product.model.GetCategoryProductListModel;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * <p>
@@ -34,5 +35,11 @@ public class ProductController extends BaseController<ProductModel> {
         return tiPage;
     }
 
+    @PostMapping(value = "/uploadPic")
+    @ApiOperation(value = "上传图片", notes = "上传图片", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public void cusGroupImport(@ApiParam(value = "入参JSON") ProductModel productModel,
+                               @RequestParam(value = "file", required = false) MultipartFile file) {
+        UploadFileUtil.uploadPic(file);
+    }
 }
 

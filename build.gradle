@@ -33,3 +33,14 @@ dependencies {
 
 
 }
+
+//def outDirPath = new File(outPath).absolutePath
+
+//task codeGenerator(type: JavaExec){
+//	classPath = sourceSets.main.runningClassPath
+//	main = 'com.pray.example.store.codeGenerator.CodeGenerator'
+//	args outDirPath
+//}
+task testOne{
+	println "Before reading the project version"
+}

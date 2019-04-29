@@ -22,7 +22,7 @@ import java.util.Scanner;
  */
 public class CodeGenerator {
     
-    private static final String TABLE_NAME = "user";
+    private static final String TABLE_NAME = "category";
 //    private static final String TABLE_NAME = "shopping_car";
 //    private static final String TABLE_NAME = "product";
 

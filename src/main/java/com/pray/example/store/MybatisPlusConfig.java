@@ -17,7 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan({"com.pray.example.store.mybatisplus.mapper",
         "com.pray.example.store.codeGenerator.product.mapper",
         "com.pray.example.store.codeGenerator.shopping_car.mapper",
-        "com.pray.example.store.codeGenerator.user.mapper"
+        "com.pray.example.store.codeGenerator.user.mapper",
+        "com.pray.example.store.codeGenerator.category.mapper"
 })
 public class MybatisPlusConfig {
     /**
